@@ -101,7 +101,7 @@ const Team = () => {
             Meet the Minds Behind FURI
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl">
-            We're a diverse team of AI specialists, creatives, technologists, and data scientists united by a passion for intelligent marketing.
+            We&apos;re a diverse team of AI specialists, creatives, technologists, and data scientists united by a passion for intelligent marketing.
           </p>
         </div>
       </section>
@@ -169,7 +169,7 @@ const Team = () => {
                 'We embrace both data science and creative intuition',
                 'We prioritize impact over industry conventions',
                 'We believe in transparency with our team and clients',
-                'We're committed to ethical AI and responsible marketing'
+                "We're committed to ethical AI and responsible marketing"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-furi-red/20 flex items-center justify-center mr-3 mt-0.5">
@@ -202,7 +202,7 @@ const Team = () => {
             Join Our Team
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            We're always looking for talented individuals who are passionate about the intersection of AI and marketing.
+            We&apos;re always looking for talented individuals who are passionate about the intersection of AI and marketing.
           </p>
           <div className="bg-furi-charcoal-light rounded-xl p-8 border border-gray-800">
             <h3 className="text-2xl font-bold text-white mb-4">Current Openings</h3>
@@ -231,7 +231,7 @@ const Team = () => {
       <section className="section bg-gradient-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Ready to partner with our team of AI marketing experts to transform your business?
