@@ -11,6 +11,7 @@ interface TeamMemberCardProps {
   linkedIn?: string;
   twitter?: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -21,6 +22,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   linkedIn,
   twitter,
   className,
+  style,
 }) => {
   return (
     <div 
@@ -28,6 +30,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         'bg-furi-charcoal-light rounded-xl overflow-hidden card-hover',
         className
       )}
+      style={style}
     >
       <div className="relative">
         <img 

@@ -8,6 +8,7 @@ interface CaseStudyCardProps {
   result: string;
   image: string;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
 }
 
@@ -16,6 +17,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   result,
   image,
   className,
+  style,
   onClick,
 }) => {
   return (
@@ -24,6 +26,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
         'bg-furi-charcoal-light rounded-xl overflow-hidden card-hover cursor-pointer',
         className
       )}
+      style={style}
       onClick={onClick}
     >
       <div 

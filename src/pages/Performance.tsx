@@ -6,14 +6,15 @@ import SectionHeading from '@/components/SectionHeading';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import { cn } from '@/lib/utils';
 
-const MetricCard = ({ title, value, change, icon: Icon, className }: { 
+const MetricCard = ({ title, value, change, icon: Icon, className, style }: { 
   title: string;
   value: string;
   change: string;
   icon: React.ElementType;
   className?: string;
+  style?: React.CSSProperties;
 }) => (
-  <div className={cn("bg-furi-charcoal-light rounded-xl p-6 card-hover", className)}>
+  <div className={cn("bg-furi-charcoal-light rounded-xl p-6 card-hover", className)} style={style}>
     <div className="flex justify-between items-start mb-4">
       <h3 className="text-gray-400 font-medium">{title}</h3>
       <Icon className="h-5 w-5 text-furi-red" />

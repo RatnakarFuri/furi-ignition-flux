@@ -7,6 +7,7 @@ interface IndustryCardProps {
   stats?: string;
   image: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const IndustryCard: React.FC<IndustryCardProps> = ({
@@ -14,6 +15,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({
   stats,
   image,
   className,
+  style,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -23,6 +25,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({
         'relative overflow-hidden rounded-xl aspect-square card-hover cursor-pointer group',
         className
       )}
+      style={style}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
