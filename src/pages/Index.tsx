@@ -5,11 +5,13 @@ import ServiceCard from '@/components/ServiceCard';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import SectionHeading from '@/components/SectionHeading';
 import ContactForm from '@/components/ContactForm';
+
 const Index = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [typedText, setTypedText] = useState('');
   const fullText = 'Feed UR Idea. We\'ll Fire It Into the Future.🚀';
   const typingRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
     let currentIndex = 0;
     const typeNextCharacter = () => {
@@ -19,7 +21,6 @@ const Index = () => {
         typingRef.current = setTimeout(typeNextCharacter, 75);
       } else {
         setIsTyping(false);
-        // Restart typing animation after a pause
         setTimeout(() => {
           setTypedText('');
           setIsTyping(true);
@@ -33,29 +34,41 @@ const Index = () => {
       if (typingRef.current) clearTimeout(typingRef.current);
     };
   }, []);
+
   const renderGradientText = (text: string) => {
     if (!text) return null;
 
-    // Split the text to apply gradient only to specific parts
     const parts = [];
     let i = 0;
+    
     while (i < text.length) {
-      if (i === 0 && text[i] === 'F') {
-        parts.push(<span key={i} className="gradient-text">F</span>);
-        i++;
-      } else if (i > 0 && text.substring(i, i + 2) === "UR") {
-        parts.push(<span key={i} className="gradient-text"> UR</span>);
-        i += 2;
-      } else if (i > 0 && text.substring(i, i + 1) === "I" && text.substring(i - 1, i) === " ") {
-        parts.push(<span key={i} className="gradient-text">I</span>);
-        i++;
+      if (text.substring(i, i + 4) === 'Feed') {
+        parts.push(<span key={`feed-${i}`}><span className="gradient-text">F</span>eed</span>);
+        i += 4;
+      } else if (text.substring(i, i + 3) === ' UR') {
+        parts.push(<span key={`ur-${i}`}><span> </span><span className="gradient-text">UR</span></span>);
+        i += 3;
+      } else if (text.substring(i, i + 5) === ' Idea') {
+        parts.push(<span key={`idea-${i}`}><span> </span><span className="gradient-text">I</span>dea</span>);
+        i += 5;
+      } else if (text.substring(i, i + 12) === '. We\'ll Fire') {
+        parts.push(<span key={`fire-${i}`}>. We'll Fire</span>);
+        i += 12;
+      } else if (text.substring(i, i + 6) === ' It In') {
+        parts.push(<span key={`it-${i}`}> It In</span>);
+        i += 6;
+      } else if (text.substring(i, i + 13) === 'to the Future') {
+        parts.push(<span key={`future-${i}`}>to the Future</span>);
+        i += 13;
       } else {
-        parts.push(<span key={i}>{text[i]}</span>);
+        parts.push(<span key={`other-${i}`}>{text[i]}</span>);
         i++;
       }
     }
+    
     return <>{parts}</>;
   };
+
   const services = [{
     title: 'Brand Strategy & Design',
     description: 'Crafting identity, clarity, and emotional resonance from the ground up.',
@@ -82,6 +95,7 @@ const Index = () => {
     icon: Code,
     features: ['WhatsApp Chatbots', 'Conversational AI Chatbots', 'Generative AI Campaigns', 'Web & Application Development']
   }];
+
   const caseStudies = [{
     title: 'Luxury Retail Brand',
     result: '6.2x ROAS in 90 days',
@@ -99,8 +113,8 @@ const Index = () => {
     result: '-38% CPA with AI automation',
     image: 'https://images.unsplash.com/photo-1589810635657-232948472d98'
   }];
+
   return <>
-      {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-dark z-0"></div>
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,45,85,0.3)_0,rgba(255,45,85,0)_50%)]"></div>
@@ -136,7 +150,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <section id="services" className="section bg-furi-charcoal relative">
         <div className="dot-pattern absolute inset-0 opacity-5"></div>
         <div className="relative z-10">
@@ -157,7 +170,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Industries Section */}
       <section id="industries" className="section bg-furi-charcoal-dark relative">
         <div className="dot-pattern absolute inset-0 opacity-5"></div>
         <div className="relative z-10">
@@ -180,7 +192,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
       <section id="case-studies" className="section bg-furi-charcoal relative">
         <div className="dot-pattern absolute inset-0 opacity-5"></div>
         <div className="relative z-10">
@@ -201,7 +212,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why FURI Section */}
       <section id="why-furi" className="section bg-furi-charcoal-dark relative">
         <div className="dot-pattern absolute inset-0 opacity-5"></div>
         <div className="relative z-10">
@@ -237,7 +247,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="section bg-furi-charcoal relative">
         <div className="dot-pattern absolute inset-0 opacity-5"></div>
         <div className="max-w-4xl mx-auto relative z-10">
@@ -247,10 +256,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WhatsApp Widget */}
       <a href="https://wa.me/917416992299" target="_blank" rel="noopener noreferrer" className="whatsapp-widget" aria-label="Chat with us on WhatsApp">
         <MessageCircle className="h-7 w-7 text-white" />
       </a>
     </>;
 };
+
 export default Index;
