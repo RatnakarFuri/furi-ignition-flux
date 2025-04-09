@@ -9,7 +9,7 @@ import ContactForm from '@/components/ContactForm';
 const Index = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Feed UR Idea. We\'ll Fire It Into the Future.🚀';
+  const fullText = 'Feed UR Idea. We\'ll Fire It Into the Future. 🚀';
   const typingRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
