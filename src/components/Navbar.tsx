@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: 'What We Do', path: '/what-we-do' },
+    { label: 'Services', path: '/services' },
     { label: 'Industries', path: '/industries' },
     { label: 'Performance', path: '/performance' },
     { label: 'Why FURI?', path: '/why-furi' },
@@ -64,6 +64,7 @@ const Navbar = () => {
         <button
           className="md:hidden relative z-10 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? (
             <X className="h-6 w-6 text-white" />
@@ -74,7 +75,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-furi-charcoal-dark z-0 flex flex-col items-center justify-center space-y-6 p-4">
+          <div className="md:hidden fixed inset-0 bg-furi-charcoal-dark/95 z-0 flex flex-col items-center justify-center space-y-6 p-4 animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
