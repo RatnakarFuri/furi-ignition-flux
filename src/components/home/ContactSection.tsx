@@ -5,7 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section bg-furi-charcoal relative">
+    <section id="contact" className="section bg-furi-charcoal-light relative">
       <div className="dot-pattern absolute inset-0 opacity-5"></div>
       <div className="max-w-4xl mx-auto relative z-10">
         <SectionHeading 

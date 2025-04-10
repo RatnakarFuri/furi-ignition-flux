@@ -20,12 +20,12 @@ const IndustriesSection = () => {
           {industries.map((industry, index) => (
             <div 
               key={index} 
-              className="bg-furi-charcoal-light rounded-xl p-6 text-center card-hover" 
+              className="bg-white rounded-xl p-6 text-center card-hover border border-furi-red/10" 
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
             >
-              <h3 className="text-white font-semibold">{industry}</h3>
+              <h3 className="text-furi-red font-semibold">{industry}</h3>
             </div>
           ))}
         </div>
