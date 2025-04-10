@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Handle scroll event
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -17,6 +18,23 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const navLinks = [
     { label: 'Services', path: '/services' },
@@ -62,7 +80,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-10 focus:outline-none"
+          className="md:hidden relative z-50 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -75,24 +93,29 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 bg-furi-charcoal-dark/95 z-0 flex flex-col items-center justify-center space-y-6 p-4 animate-fade-in">
-            {navLinks.map((link) => (
+          <div className="md:hidden fixed inset-0 bg-furi-charcoal-dark/95 z-40 flex flex-col items-center justify-center overflow-y-auto">
+            <div className="w-full max-h-[80vh] overflow-y-auto py-20 px-6 flex flex-col items-center space-y-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    "text-lg font-medium text-white hover:text-furi-red transition-colors w-full text-center py-3",
+                    location.pathname === link.path ? "text-furi-red" : ""
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
-                key={link.path}
-                to={link.path}
-                className="text-lg font-medium text-white hover:text-furi-red transition-colors"
+                to="/contact"
+                className="btn-primary mt-4 w-full text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link.label}
+                Let's Talk
               </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="btn-primary mt-4"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Let's Talk
-            </Link>
+            </div>
           </div>
         )}
       </div>

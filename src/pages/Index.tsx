@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Palette, MessageSquare, TrendingUp, Video, Code, MessageCircle } from 'lucide-react';
@@ -10,7 +9,7 @@ import ContactForm from '@/components/ContactForm';
 const Index = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Feed UR Idea. We\'ll Fire It Into the Future.🚀';
+  const fullText = 'Feed UR Idea. We\'ll Fire It Into the Future.&#128640;';
   const typingRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
