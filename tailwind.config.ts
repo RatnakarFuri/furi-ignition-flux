@@ -72,12 +72,12 @@ export default {
 					red: "#FF2D55",
 					"red-light": "#FF5E7D",
 					"red-dark": "#D61A40",
-					iris: "#FF2D55", // Updated to red
-					purple: "#FF2D55", // Updated to red
-					charcoal: "#FFFFFF", // Updated to white
-					"charcoal-light": "#F8F8F8", // Updated to light gray
-					"charcoal-dark": "#F0F0F0", // Updated to lighter gray
-					gray: "#666666" // Updated for better contrast
+					iris: "#8B5CF6",
+					purple: "#D946EF",
+					charcoal: "#121212",
+					"charcoal-light": "#1A1A1A",
+					"charcoal-dark": "#0A0A0A",
+					gray: "#999999"
 				}
 			},
 			borderRadius: {
@@ -126,8 +126,8 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-iris': 'linear-gradient(45deg, #FF2D55, #FF5E7D)', // Updated to red gradient
-				'gradient-dark': 'linear-gradient(to bottom, #F8F8F8, #F0F0F0)' // Updated to white gradient
+				'gradient-iris': 'linear-gradient(45deg, #FF2D55, #D946EF)',
+				'gradient-dark': 'linear-gradient(to bottom, #1A1A1A, #0A0A0A)'
 			}
 		}
 	},

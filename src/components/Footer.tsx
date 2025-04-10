@@ -34,7 +34,7 @@ const Footer = () => {
           <h4 className="text-white font-semibold mb-4">Navigate</h4>
           <ul className="space-y-2 text-gray-400">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
+            <li><Link to="/what-we-do" className="hover:text-white transition-colors">What We Do</Link></li>
             <li><Link to="/industries" className="hover:text-white transition-colors">Industries</Link></li>
             <li><Link to="/performance" className="hover:text-white transition-colors">Performance</Link></li>
             <li><Link to="/why-furi" className="hover:text-white transition-colors">Why FURI?</Link></li>
