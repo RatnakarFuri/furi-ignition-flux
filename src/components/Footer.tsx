@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-furi-charcoal-dark pt-20 pb-10 px-4 sm:px-6 lg:px-8">
+  return <footer className="bg-furi-charcoal-dark pt-20 pb-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <h3 className="text-2xl font-bold mb-4">
@@ -34,7 +31,7 @@ const Footer = () => {
           <h4 className="text-white font-semibold mb-4">Navigate</h4>
           <ul className="space-y-2 text-gray-400">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link to="/what-we-do" className="hover:text-white transition-colors">What We Do</Link></li>
+            <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
             <li><Link to="/industries" className="hover:text-white transition-colors">Industries</Link></li>
             <li><Link to="/performance" className="hover:text-white transition-colors">Performance</Link></li>
             <li><Link to="/why-furi" className="hover:text-white transition-colors">Why FURI?</Link></li>
@@ -56,7 +53,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-400">
             <li className="flex items-center space-x-2">
               <Mail size={16} />
-              <a href="mailto:hello@furiagency.com" className="hover:text-white transition-colors">hello@furiagency.com</a>
+              <a href="mailto:hello@furiagency.com" className="hover:text-white transition-colors">admin@furiglobal.in</a>
             </li>
             <li className="flex items-center space-x-2">
               <Phone size={16} />
@@ -76,8 +73,6 @@ const Footer = () => {
           <Link to="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
